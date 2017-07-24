@@ -1,93 +1,35 @@
 package com.taffered;
 
 import com.taffered.analyzer.darkDB.Treeable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.vecmath.Vector3d;
 
-public class Vec3D implements Treeable {
-
-	private double x;
-	private double y;
-	private double z;
+public class DarkVector3d extends Vector3d implements Treeable {
 
     /**
      * Dromed has a different origin
      * Dromed(x, y ,z) = J3D(z, x, y)
+	 * when reading Dromed data
      */
 	public static final int  VEC_DROMED = 1;
 	public static final int VEC_J3D = 0;
-	
-	public Vec3D(double x, double y, double z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
-	}
 
-	public Vec3D(double x, double y, double z, int type)
+	/**
+	 * Create a Vector3d from Dromed Vector
+	 * WARNING : Always use it with data coming from DromED
+	 * @param x Dromed x coordinate (z in Java3D)
+	 * @param y Dromed y coordinate (x in Java3D)
+	 * @param z Dromed z coordinate (y in Java3D)
+	 */
+	public DarkVector3d(double x, double y, double z)
 	{
-		if (type == VEC_DROMED)
-		{
-			this.x = y;
-			this.y = z;
-			this.z = x;
-		}
-		else
-		{
-			this.x = x;
-			this.y = y;
-			this.z = z;
-		}
-	}
-
-	/**
-	 * @return the x
-	 */
-	public double getX() {
-		return x;
-	}
-
-	/**
-	 * @param x the x to set
-	 */
-	public void setX(float x) {
-		this.x = x;
-	}
-
-	/**
-	 * @return the y
-	 */
-	public double getY() {
-		return y;
-	}
-
-	/**
-	 * @param y the y to set
-	 */
-	public void setY(float y) {
-		this.y = y;
-	}
-
-	/**
-	 * @return the z
-	 */
-	public double getZ() {
-		return z;
-	}
-
-	/**
-	 * @param z the z to set
-	 */
-	public void setZ(float z) {
-		this.z = z;
-	}
-
-	public Vector3d getVector()
-	{
-		return new Vector3d(x, y, z);
+		super(y, z, x);
 	}
 	
 	@Override
+	@NotNull
 	public DefaultMutableTreeNode getTreeNode() {
 		DefaultMutableTreeNode tn = new DefaultMutableTreeNode();
 		

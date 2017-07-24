@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
+import com.taffered.DarkVector3d;
 import com.taffered.URUTriplet;
-import com.taffered.Vec3D;
 import com.taffered.renderer.Renderable;
 import com.taffered.utils.DarkInputStream;
 import com.taffered.utils.Ubyte8;
@@ -26,9 +26,9 @@ public class Brush implements Treeable, Renderable {
 	private byte type;
 	private Ubyte8 zero1;
 
-	private Vec3D position;
+	private DarkVector3d position;
 	private URUTriplet rotation;
-	private Vec3D size;
+	private DarkVector3d size;
 
 	private short cur_faces;
 	private double snap_size;
@@ -74,8 +74,8 @@ public class Brush implements Treeable, Renderable {
 			in.skipBytes(1);
 
 
-			position = new Vec3D(in.readLittleFloat(), in.readLittleFloat(), in.readLittleFloat(), Vec3D.VEC_DROMED);
-			size = new Vec3D(in.readLittleFloat(), in.readLittleFloat(), in.readLittleFloat(), Vec3D.VEC_DROMED);
+			position = new DarkVector3d(in.readLittleFloat(), in.readLittleFloat(), in.readLittleFloat());
+			size = new DarkVector3d(in.readLittleFloat(), in.readLittleFloat(), in.readLittleFloat());
 			rotation = new URUTriplet(in.readUint16(), in.readUint16(), in.readUint16(), URUTriplet.URU_DROMED);
 
 			cur_faces = in.readLittleShort();
@@ -251,7 +251,7 @@ public class Brush implements Treeable, Renderable {
 		return type;
 	}
 
-	public Vec3D getPosition() {
+	public DarkVector3d getPosition() {
 		return position;
 	}
 
@@ -259,7 +259,7 @@ public class Brush implements Treeable, Renderable {
 		return rotation;
 	}
 
-	public Vec3D getSize() {
+	public DarkVector3d getSize() {
 		return size;
 	}
 
