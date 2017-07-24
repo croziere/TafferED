@@ -3,7 +3,7 @@ package com.taffered.utils;
 /**
  * Wraps a unsigned int of 32bit size
  */
-public class Uint32 {
+public class UInt {
 
 	public static final int BYTE_SIZE = 4;
 
@@ -12,7 +12,7 @@ public class Uint32 {
 	 */
 	private int value;
 	
-	public Uint32(int value) {
+	public UInt(int value) {
 		this.value = value;
 	}
 	

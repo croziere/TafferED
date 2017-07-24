@@ -3,7 +3,7 @@ package com.taffered.analyzer.darkDB
 import com.taffered.renderer.Renderable
 import com.taffered.renderer.objects.Origin
 import com.taffered.utils.DarkInputStream
-import com.taffered.utils.Uint32
+import com.taffered.utils.UInt
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.IOException
@@ -78,8 +78,8 @@ class MissFile @Throws(FileNotFoundException::class, InvalidDarkDBFileException:
                 }
                 val name = nameBuilder.toString()
 
-                val offset = Uint32(`in`!!.readLittleInt())
-                val length = Uint32(`in`!!.readLittleInt())
+                val offset = UInt(`in`!!.readLittleInt())
+                val length = UInt(`in`!!.readLittleInt())
 
                 if (length.value > 0) {
                     DarkDBInventory.put(name.trim { it <= ' ' }, DarkDBInvItem(name.trim { it <= ' ' }, offset, length))

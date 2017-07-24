@@ -2,17 +2,17 @@ package com.taffered.analyzer.darkDB
 
 import com.taffered.renderer.Renderable
 import com.taffered.utils.DarkInputStream
-import com.taffered.utils.Uint32
+import com.taffered.utils.UInt
 import java.io.IOException
 import javax.swing.tree.DefaultMutableTreeNode
 
-abstract class DarkDBChunk(protected val `in`: DarkInputStream, protected var offset: Uint32, protected var length: Uint32) : Treeable, Renderable {
+abstract class DarkDBChunk(protected val `in`: DarkInputStream, protected var offset: UInt, protected var length: UInt) : Treeable, Renderable {
 
     lateinit var name: String
 
-    lateinit var version_high: Uint32
+    lateinit var version_high: UInt
 
-    protected lateinit var version_low: Uint32
+    protected lateinit var version_low: UInt
 
     init {
         readHeader()
@@ -39,9 +39,9 @@ abstract class DarkDBChunk(protected val `in`: DarkInputStream, protected var of
             version_high = `in`.readUint32()
             version_low = `in`.readUint32()
 
-            `in`.skipBytes(Uint32.BYTE_SIZE) //Skip 0xFF
+            `in`.skipBytes(UInt.BYTE_SIZE) //Skip 0xFF
 
-            offset = Uint32((offset.value + DarkDBChunk.HEADER_SIZE).toInt()) //Set the offset to the beginin of chunk data
+            offset = UInt((offset.value + HEADER_SIZE).toInt()) //Set the offset to the beginin of chunk data
 
         } catch (e: IOException) {
             // TODO Auto-generated catch block

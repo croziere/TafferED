@@ -2,7 +2,7 @@ package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
 import com.taffered.utils.DarkTimeUtils;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -12,15 +12,15 @@ public class DarkDBChunkBRHEAD extends DarkDBChunk {
 
     private String mCreator;
     private String mName;
-    private Uint32 mUknown1;
-    private Uint32 mGridSize;
+    private UInt mUknown1;
+    private UInt mGridSize;
     private Boolean mShowGrid;
-    private Uint32 mShading;
-    private Uint32 mUknown5;
+    private UInt mShading;
+    private UInt mUknown5;
     private Boolean mUseGrid;
-    private Uint32 mTime;
+    private UInt mTime;
 
-    public DarkDBChunkBRHEAD(DarkInputStream in, Uint32 offset, Uint32 len) {
+    public DarkDBChunkBRHEAD(DarkInputStream in, UInt offset, UInt len) {
         super(in, offset, len);
         readChunk();
     }
@@ -47,7 +47,7 @@ public class DarkDBChunkBRHEAD extends DarkDBChunk {
         return tn;
     }
 
-    protected String getShadingState(Uint32 shading)
+    protected String getShadingState(UInt shading)
     {
         if (shading.getValue() == 2)
         {

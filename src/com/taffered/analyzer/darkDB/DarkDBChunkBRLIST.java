@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 import org.jetbrains.annotations.NotNull;
 
 import javax.media.j3d.BranchGroup;
@@ -13,12 +13,12 @@ import java.util.TreeMap;
 
 public class DarkDBChunkBRLIST extends DarkDBChunk {
 	
-	//Header + Ubyte8 + Array of brushes
+	//Header + UByte + Array of brushes
 	private Map<Integer, Brush> brushes = new TreeMap<>();
 	
 	
 	
-	public DarkDBChunkBRLIST(DarkInputStream in, Uint32 offset, Uint32 len) {		
+	public DarkDBChunkBRLIST(DarkInputStream in, UInt offset, UInt len) {
 		super(in, offset, len);		
 		readChunk();
 	}

@@ -3,7 +3,7 @@ package com.taffered.utils;
 /**
  * Wraps an unsigned int of 16 bit size
  */
-public class Ushort16 {
+public class UShort {
 
 	public static final int BYTE_SIZE = 2;
 
@@ -12,11 +12,11 @@ public class Ushort16 {
 	 */
 	private char value;
 	
-	public Ushort16(char value) {
+	public UShort(char value) {
 		this.value = value;
 	}
 	
-	public Ushort16(short value) {
+	public UShort(short value) {
 		this.value = (char) value;
 	}
 

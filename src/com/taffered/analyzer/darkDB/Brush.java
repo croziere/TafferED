@@ -4,9 +4,9 @@ import com.taffered.DarkVector3d;
 import com.taffered.URUTriplet;
 import com.taffered.renderer.Renderable;
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Ubyte8;
-import com.taffered.utils.Uint32;
-import com.taffered.utils.Ushort16;
+import com.taffered.utils.UByte;
+import com.taffered.utils.UInt;
+import com.taffered.utils.UShort;
 
 import javax.media.j3d.BranchGroup;
 import javax.media.j3d.ColoringAttributes;
@@ -19,12 +19,12 @@ import java.util.List;
 
 public class Brush implements Treeable, Renderable {
 
-	private Ushort16 id;
-	private Ushort16 time;
+	private UShort id;
+	private UShort time;
 	private int primal;
 	private short base;
 	private byte type;
-	private Ubyte8 zero1;
+	private UByte zero1;
 
 	private DarkVector3d position;
 	private URUTriplet rotation;
@@ -32,14 +32,14 @@ public class Brush implements Treeable, Renderable {
 
 	private short cur_faces;
 	private double snap_size;
-	private Ubyte8 uknown3[];
-	private Ubyte8 snap_grid;
-	private Ubyte8 num_faces;
-	private Ubyte8 edge;
-	private Ubyte8 vertex;
-	private Ubyte8 flags;
-	private Ubyte8 group;
-	private Uint32 uknown5;
+	private UByte uknown3[];
+	private UByte snap_grid;
+	private UByte num_faces;
+	private UByte edge;
+	private UByte vertex;
+	private UByte flags;
+	private UByte group;
+	private UInt uknown5;
 
 	private long offset;
 
@@ -49,7 +49,7 @@ public class Brush implements Treeable, Renderable {
 
 		public Brush(DarkInputStream in) {
 			this.in = in;
-			uknown3 = new Ubyte8[18];
+			uknown3 = new UByte[18];
 			faces = new ArrayList<>();
 			try {
 				readBrush();
@@ -59,7 +59,7 @@ public class Brush implements Treeable, Renderable {
 			}
 		}
 
-		public Ushort16 getId() {
+		public UShort getId() {
 			return id;
 		}
 
@@ -235,7 +235,7 @@ public class Brush implements Treeable, Renderable {
 			return scene;
 		}
 
-	public Ushort16 getTime() {
+	public UShort getTime() {
 		return time;
 	}
 
@@ -271,27 +271,27 @@ public class Brush implements Treeable, Renderable {
 		return snap_size;
 	}
 
-	public Ubyte8 getSnap_grid() {
+	public UByte getSnap_grid() {
 		return snap_grid;
 	}
 
-	public Ubyte8 getNum_faces() {
+	public UByte getNum_faces() {
 		return num_faces;
 	}
 
-	public Ubyte8 getEdge() {
+	public UByte getEdge() {
 		return edge;
 	}
 
-	public Ubyte8 getVertex() {
+	public UByte getVertex() {
 		return vertex;
 	}
 
-	public Ubyte8 getFlags() {
+	public UByte getFlags() {
 		return flags;
 	}
 
-	public Ubyte8 getGroup() {
+	public UByte getGroup() {
 		return group;
 	}
 

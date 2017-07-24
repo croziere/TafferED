@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -15,7 +15,7 @@ public class DarkDBChunkQuestDB extends DarkDBChunk {
 	private List<DarkDBQuestVar> vars = new ArrayList<>();
 	
 	
-	public DarkDBChunkQuestDB(DarkInputStream in, Uint32 offset, Uint32 len) {
+	public DarkDBChunkQuestDB(DarkInputStream in, UInt offset, UInt len) {
 		super(in, offset, len);
 		readChunk();
 	}

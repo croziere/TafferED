@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Ushort16;
+import com.taffered.utils.UShort;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.io.IOException;
@@ -10,17 +10,17 @@ class DarkDBBrushFace implements Treeable {
 
 	private short texture;
 	
-	private Ushort16 rotation;
+	private UShort rotation;
 	
-	private Ushort16 scale;
+	private UShort scale;
 	
-	private Ushort16 offset[];
+	private UShort offset[];
 	
 	private DarkInputStream stream;
 	
 	public DarkDBBrushFace(DarkInputStream stream) {
 		this.stream = stream;
-		offset = new Ushort16[2];
+		offset = new UShort[2];
 		try {
 			readData();
 		} catch (IOException e) {

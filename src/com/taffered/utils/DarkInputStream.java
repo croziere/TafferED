@@ -14,26 +14,26 @@ public class DarkInputStream extends LittleEndianRandomAccessFile {
 	}
 
     /**
-     * Read one Uint32 at the given position
-     * @return Uint32 The read value
+     * Read one UInt at the given position
+     * @return UInt The read value
      * @throws IOException If a stream error occurs
      */
-	public Uint32 readUint32() throws IOException {
+	public UInt readUint32() throws IOException {
 
-		return new Uint32(this.readLittleInt());
+		return new UInt(this.readLittleInt());
 	}
 
     /**
-     * Read one Ushort16 at the given position
-     * @return Ushort16 The read value
+     * Read one UShort at the given position
+     * @return UShort The read value
      * @throws IOException If a stream error occurs
      */
-	public Ushort16 readUint16() throws IOException {
-		return new Ushort16(this.readLittleShort());
+	public UShort readUint16() throws IOException {
+		return new UShort(this.readLittleShort());
 	}
 
-	public Ubyte8 readUint8() throws IOException {
-		return new Ubyte8(this.readByte());
+	public UByte readUint8() throws IOException {
+		return new UByte(this.readByte());
 	}
 
 	public String readStaticString(int size) throws IOException {

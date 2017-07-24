@@ -1,18 +1,18 @@
 package com.taffered.analyzer.darkDB;
 
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
 public class DarkDBInvItem implements Treeable {
 
 	private String name;
-	private Uint32 offset;
-	private Uint32 length;
+	private UInt offset;
+	private UInt length;
 	
 	
 	
-	public DarkDBInvItem(String name, Uint32 offset, Uint32 length) {
+	public DarkDBInvItem(String name, UInt offset, UInt length) {
 		this.name = name;
 		this.offset = offset;
 		this.length = length;
@@ -36,14 +36,14 @@ public class DarkDBInvItem implements Treeable {
 	/**
 	 * @return the offset
 	 */
-	public Uint32 getOffset() {
+	public UInt getOffset() {
 		return offset;
 	}
 
 	/**
 	 * @return the length
 	 */
-	public Uint32 getLength() {
+	public UInt getLength() {
 		return length;
 	}
 	

@@ -1,8 +1,8 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Ubyte8;
-import com.taffered.utils.Ushort16;
+import com.taffered.utils.UByte;
+import com.taffered.utils.UShort;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.List;
@@ -11,9 +11,9 @@ import java.util.List;
  * Created by Benjamin on 12/07/2017.
  */
 class DarkDBTXLISTTexture implements Treeable {
-    private Ubyte8 mOne;
-    private Ubyte8 mFam;
-    private Ushort16 mZero;
+    private UByte mOne;
+    private UByte mFam;
+    private UShort mZero;
     private String mName;
     private String mFamName;
 

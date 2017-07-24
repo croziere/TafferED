@@ -1,7 +1,7 @@
 package com.taffered;
 
 import com.taffered.analyzer.darkDB.Treeable;
-import com.taffered.utils.Ushort16;
+import com.taffered.utils.UShort;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -12,17 +12,17 @@ public class URUTriplet implements Treeable {
 
 	public static final int URU_DROMED = 1;
 
-	private Ushort16 x;
-	private Ushort16 y;
-	private Ushort16 z;
+	private UShort x;
+	private UShort y;
+	private UShort z;
 
-	public URUTriplet(Ushort16 x, Ushort16 y, Ushort16 z) {
+	public URUTriplet(UShort x, UShort y, UShort z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;
 	}
 
-	public URUTriplet(Ushort16 x, Ushort16 y, Ushort16 z, int type)
+	public URUTriplet(UShort x, UShort y, UShort z, int type)
 	{
 		if (type == URU_DROMED)
 		{
@@ -41,37 +41,37 @@ public class URUTriplet implements Treeable {
 	/**
 	 * @return the x
 	 */
-	public Ushort16 getX() {
+	public UShort getX() {
 		return x;
 	}
 	/**
 	 * @param x the x to set
 	 */
-	public void setX(Ushort16 x) {
+	public void setX(UShort x) {
 		this.x = x;
 	}
 	/**
 	 * @return the y
 	 */
-	public Ushort16 getY() {
+	public UShort getY() {
 		return y;
 	}
 	/**
 	 * @param y the y to set
 	 */
-	public void setY(Ushort16 y) {
+	public void setY(UShort y) {
 		this.y = y;
 	}
 	/**
 	 * @return the z
 	 */
-	public Ushort16 getZ() {
+	public UShort getZ() {
 		return z;
 	}
 	/**
 	 * @param z the z to set
 	 */
-	public void setZ(Ushort16 z) {
+	public void setZ(UShort z) {
 		this.z = z;
 	}
 

@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -13,15 +13,15 @@ import java.util.List;
  * Created by Benjamin on 12/07/2017.
  */
 public class DarkDBTXLIST extends DarkDBChunk {
-    private Uint32 mLength;
-    private Uint32 mTxtCount;
-    private Uint32 mFamCount;
+    private UInt mLength;
+    private UInt mTxtCount;
+    private UInt mFamCount;
 
     private List<DarkDBTXLISTFam> mFamilies;
 
     private List<DarkDBTXLISTTexture> mTextures;
 
-    public DarkDBTXLIST(DarkInputStream in, Uint32 offset, Uint32 len) {
+    public DarkDBTXLIST(DarkInputStream in, UInt offset, UInt len) {
         super(in, offset, len);
         mFamilies = new ArrayList<>();
         mTextures = new ArrayList<>();

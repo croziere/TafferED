@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -14,10 +14,10 @@ public class DarkDBChunkSKYMODE extends DarkDBChunk {
     private static final int SKYMODE_TEXTURE = 0;
     private static final int SKYMODE_STARS = 1;
 
-    private Uint32 mMode;
+    private UInt mMode;
 
 
-    public DarkDBChunkSKYMODE(DarkInputStream in, Uint32 offset, Uint32 len) {
+    public DarkDBChunkSKYMODE(DarkInputStream in, UInt offset, UInt len) {
         super(in, offset, len);
         readChunk();
     }
@@ -36,7 +36,7 @@ public class DarkDBChunkSKYMODE extends DarkDBChunk {
         return tn;
     }
 
-    private String getSkymode(Uint32 mMode) {
+    private String getSkymode(UInt mMode) {
         if (mMode.getValue() == SKYMODE_STARS)
         {
             return "Stars";

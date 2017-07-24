@@ -2,7 +2,7 @@ package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
 import com.taffered.utils.DarkTimeUtils;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class DarkDBChunkSIMTIME extends DarkDBChunk {
 
-	private Uint32 time;
+	private UInt time;
 	
-	private Uint32 uknown;
+	private UInt uknown;
 	
-	public DarkDBChunkSIMTIME(DarkInputStream in, Uint32 offset, Uint32 len) {
+	public DarkDBChunkSIMTIME(DarkInputStream in, UInt offset, UInt len) {
 		super(in, offset, len);
 		readChunk();
 	}

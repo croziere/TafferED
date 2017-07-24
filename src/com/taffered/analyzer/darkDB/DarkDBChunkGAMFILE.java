@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -10,7 +10,7 @@ public class DarkDBChunkGAMFILE extends DarkDBChunk {
 	
 	private String gamFileName;
 
-	public DarkDBChunkGAMFILE(DarkInputStream in, Uint32 offset, Uint32 len) {
+	public DarkDBChunkGAMFILE(DarkInputStream in, UInt offset, UInt len) {
 		super(in, offset, len);
 		readChunk();
 	}

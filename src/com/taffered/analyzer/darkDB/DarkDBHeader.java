@@ -1,8 +1,8 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Ubyte8;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UByte;
+import com.taffered.utils.UInt;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -18,18 +18,18 @@ public class DarkDBHeader implements Treeable {
 	/**
 	 * Inventory offset
 	 */
-	private Uint32 inv_offset;
+	private UInt inv_offset;
 	
-	private Uint32 zero;
+	private UInt zero;
 	
-	private Uint32 one;
+	private UInt one;
 	
-	private Ubyte8[] zeros;
+	private UByte[] zeros;
 
 	/**
 	 * Check the file
 	 */
-	private Uint32 dead_beef;
+	private UInt dead_beef;
 	
 	private static final int ZEROS_SIZE = 256;
 	
@@ -42,7 +42,7 @@ public class DarkDBHeader implements Treeable {
 	
 	public DarkDBHeader(DarkInputStream darkInputStream) throws InvalidDarkDBFileException {
 
-		zeros = new Ubyte8[ZEROS_SIZE];
+		zeros = new UByte[ZEROS_SIZE];
 		try {
 			this.inv_offset = darkInputStream.readUint32();
 			
@@ -66,7 +66,7 @@ public class DarkDBHeader implements Treeable {
 		}
 	}
 	
-	public Uint32 getInvOffset() {
+	public UInt getInvOffset() {
 		return inv_offset;
 	}
 

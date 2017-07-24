@@ -3,7 +3,7 @@ package com.taffered.utils;
 /**
  * Wraps a unsigned int of 8 bits size
  */
-public class Ubyte8 {
+public class UByte {
 
 	public static final int BYTE_SIZE = 1;
 
@@ -13,7 +13,7 @@ public class Ubyte8 {
 	private byte value;
 	
 	
-	public Ubyte8(byte value) {
+	public UByte(byte value) {
 		this.value = value;
 	}
 	

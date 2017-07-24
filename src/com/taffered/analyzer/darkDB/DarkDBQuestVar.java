@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.io.IOException;
@@ -10,7 +10,7 @@ class DarkDBQuestVar implements Treeable {
 	
 	private DarkInputStream stream;
 
-	private Uint32 nameLength;
+	private UInt nameLength;
 
 	private String name;
 	

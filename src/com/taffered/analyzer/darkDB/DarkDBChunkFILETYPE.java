@@ -1,7 +1,7 @@
 package com.taffered.analyzer.darkDB;
 
 import com.taffered.utils.DarkInputStream;
-import com.taffered.utils.Uint32;
+import com.taffered.utils.UInt;
 
 import javax.media.j3d.BranchGroup;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -17,9 +17,9 @@ public class DarkDBChunkFILETYPE extends DarkDBChunk {
 	private static final long FILE_TYPE_COW = 0x00071F00;
 	private static final long FILE_TYPE_MASK_ARCHAIC = 0xFFFF0000;
 	
-	private Uint32 type;
+	private UInt type;
 	
-	public DarkDBChunkFILETYPE(DarkInputStream in, Uint32 offset, Uint32 len) {
+	public DarkDBChunkFILETYPE(DarkInputStream in, UInt offset, UInt len) {
 		super(in, offset, len);		
 		readChunk();		
 	}
